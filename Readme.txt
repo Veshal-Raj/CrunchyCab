@@ -32,3 +32,8 @@ Two Types of Export/Import
 
     export const Component
     import {Component} from 'path'
+
+# React Hooks
+(Normal Js utility functions)
+    - useState() - Superpowerful state variable in React
+    - useEffect()

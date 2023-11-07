@@ -11,7 +11,6 @@ const RestuarantCard = ({ resObj }) => {
   } = resObj;
 
   const imageUrl = getCDNUrl(cloudinaryImageId); // Correctly calling the function with the ID
-  console.log(imageUrl);
 
   return (
     <div className="res-card" style={{ backgroundColor: "#f0fff" }}>

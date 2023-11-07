@@ -1,12 +1,33 @@
 import RestuarantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
+import mockData from "../utils/mockData";
+import { useState } from 'react';
 
 const Body = () => {
-  return (
+
+    //Local State Variable - Super powerful variable
+     const  [restuarantList, setRestuarantList]  = useState(mockData)
+
+
+    return (
     <div className="body">
-      <div className="search">Search</div>
+      <div className="filter">
+        <button
+          className="filter-btn"
+          onClick={() => {
+              console.log('button clicked');
+              // Filter logic
+              const filterListOfResturants = restuarantList.filter(
+                  res => res.avgRating > 4
+                  );
+                  console.log(filterListOfResturants)
+                  setRestuarantList(filterListOfResturants);
+          }}
+        >
+          Top Rated Button
+        </button>
+      </div>
       <div className="res-container">
-        {resList.map((restaurant) => (
+        {restuarantList.map((restaurant) => (
           <RestuarantCard
             key={restaurant.id} // Ensure to provide a unique key for each component
             resObj={restaurant}
