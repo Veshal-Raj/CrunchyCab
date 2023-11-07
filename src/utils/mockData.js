@@ -19,7 +19,7 @@ const resList = [
     timeTaken: "45 min",
   },
   {
-    id: "2",
+    id: "2", 
     name: "Hotel Sagar (Old Sagar)",
     cloudinaryImageId: "rapy3ovwlb9rp5udsvcr",
     locality: "Mavoor Road",
