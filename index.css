@@ -20,11 +20,16 @@ html {
 
 .company-name {
     padding: 20px 0px ;
-
+    font-family: 'Arimo', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
 .logo {
     width: 150px;
+    cursor: pointer;
 }
 
 
@@ -39,6 +44,19 @@ html {
 .nav-items > ul > li {
     padding: 10px;
     margin: 10px;
+    font-family: 'Arimo', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    transition: transform 0.3s ease; /* Adding transition for smooth scaling */
+    font-weight: bold;
+
+}
+
+.nav-items > ul >li:hover {
+    transform: scale(1.03);
+    font-weight: bold;
+    color: green;
+    cursor: pointer;
 }
 
 .res-container {
@@ -54,11 +72,17 @@ html {
     margin: 10px;
     transition: box-shadow .3s ease;
     cursor: pointer;
+    font-family: 'Arimo', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    transition: transform 0.3s ease; /* Adding transition for smooth scaling */
 
 }
 
 .res-card:hover {
     box-shadow: 0 0 5px 0px black; /* horizontal-offset vertical-offset blur spread color */
+    background-color: #fbfcfc;
+    transform: scale(1.03);
 
 }
 
