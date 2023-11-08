@@ -1,29 +1,42 @@
 import { getCDNUrl } from "../utils/constants";
 
-const RestuarantCard = ({ resObj }) => {
-  const {
-    cloudinaryImageId,
-    name,
-    cuisines,
-    avgRating,
-    costForTwo,
-    timeTaken,
-  } = resObj;
-
-  const imageUrl = getCDNUrl(cloudinaryImageId); // Correctly calling the function with the ID
+const RestuarantCard = ({ restaurant }) => {
+  const defaultImage =
+    "https://beautifuldawndesigns.net/wp-content/uploads/2023/01/food-drawings-easy-15.jpg";
+  const imageUrl = restaurant.info
+    ? getCDNUrl(restaurant.info.cloudinaryImageId)
+    : defaultImage;
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0fff" }}>
+    <div className="res-card" style={{ backgroundColor: "#f0fff" , justifyContent: "space-around" }}>
       <img
         className="res-logo"
         alt="res-logo"
         src={imageUrl} // Update image URL as required
       />
-      <h3>{name} </h3>
-      <h4>{avgRating} stars </h4>
-      <h4>{timeTaken}</h4>
-      <small>{cuisines.join(", ")}</small>
-      <h4>{costForTwo}</h4>
+      
+      {/* Restaurant Name */}
+  <span style={{ fontWeight: "bold", fontSize: "1.1em" }}>
+    {restaurant.info ? restaurant.info.name : ""}<br />
+  </span>
+  
+  {/* Rating and Delivery Time */}
+  <span style={{ fontWeight: "bold"}}> 
+    {restaurant.info ? restaurant.info.avgRating : ""} stars -{" "}
+    {restaurant.info ? restaurant.info.sla.deliveryTime : ""} mins<br />
+  </span>
+  
+  {/* Cuisines */}
+  <small>
+    {restaurant.info && restaurant.info.cuisines && restaurant.info.cuisines.length > 0
+      ? restaurant.info.cuisines.join(", ")
+      : "Cuisine information not available"}<br />
+  </small>
+  
+  {/* Cost for Two */}
+  <span style={{ fontWeight: "bold" }}>
+    {restaurant.info ? restaurant.info.costForTwo : ""}
+  </span>
     </div>
   );
 };
