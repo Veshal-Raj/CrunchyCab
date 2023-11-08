@@ -1,5 +1,4 @@
 import RestuarantCard from "./RestaurantCard";
-import mockData from "../utils/mockData";
 import { useState, useEffect } from "react";
 import "./Body.css";
 
@@ -7,7 +6,7 @@ import "./Body.css";
 
 const Body = () => {
   //Local State Variable - Super powerful variable
-  const [restuarantList, setRestuarantList] = useState(mockData);
+  const [restuarantList, setRestuarantList] = useState([]); // avoiding mockData
 
   useEffect(()=> {
     const fetchData = async () => {
@@ -44,7 +43,6 @@ const Body = () => {
       </div>
       <div className="res-container">
   {restuarantList.map((restaurant, index) => {
-    // console.log('resturant mapping -->',restaurant); // Correctly placed within the JavaScript block
     return (
       <RestuarantCard
         key={index} // Ensure to provide a unique key for each component
