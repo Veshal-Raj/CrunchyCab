@@ -15,6 +15,7 @@ const Body = () => {
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.2587531&lng=75.78041&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
     const json = await data.json()
+    
     // Optional Chaining
     setRestuarantList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       }
@@ -22,19 +23,12 @@ const Body = () => {
   }, []);
 
 
-  if (!restuarantList || restuarantList.length === 0) {
-    const shimmerCards = new Array(12).fill(null);
+  // Conditional Rendering
+  // if (!restuarantList || restuarantList.length === 0) {
+  //   return <Shimmer />
+  // }
 
-    return (
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {shimmerCards.map((_, index) => (
-          <Shimmer key={index} />
-        ))}
-      </div>
-    );
-  }
-
-  return (
+  return !restuarantList || restuarantList.length === 0 ? <Shimmer /> : (
    
     <div className="body">
      
