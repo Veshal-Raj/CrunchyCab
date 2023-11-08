@@ -6,11 +6,12 @@ html {
     justify-content: space-between;
     /* border: 1px solid black; */
     box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+    background-color: #F3F3F4;
     
 }
 
 .res-container {
-    background-color: #f0ffff;
+    background-color: #ffffff;
     
 }
 

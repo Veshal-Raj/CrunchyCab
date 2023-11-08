@@ -8,7 +8,7 @@ const RestuarantCard = ({ restaurant }) => {
     : defaultImage;
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0fff" , justifyContent: "space-around" }}>
+    <div className="res-card" style={{ backgroundColor: "#fffff" , justifyContent: "space-around" }}>
       <img
         className="res-logo"
         alt="res-logo"
